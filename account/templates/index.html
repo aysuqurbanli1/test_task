@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}{% endblock %}
+
+{% block title %} Homepage {% endblock %}
+
+{% block content %}
+<div class="data">
+    <div>
+    <h1 class="data-name">Username</h1>
+    <h1>{{instagram_data.username}}</h1>
+    </div>
+    <div>
+    <h1 class="data-name">Followers</h1>
+    <h1>{{instagram_data.follower}}</h1>
+    </div>
+    <div>
+    <h1 class="data-name">Following</h1>
+    <h1>{{instagram_data.following}}</h1>
+    </div>
+</div>
+
+
+
+{% endblock %}
+    

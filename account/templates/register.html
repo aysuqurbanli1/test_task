@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <div class="register">
+    <h2>Register</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        {% for field in form %}
+          <label> 
+            {{ field.label_tag }}
+            {{field}}
+          </label>
+          <ul>
+          {% for error in field.errors %}
+            <li>{{error}}</li>
+          {% endfor %}
+          </ul>
+        {% endfor %}
+        
+
+      <div class="input-box button">
+        <input type="Submit" value="Register Now">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="{% url 'login' %}">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
+
